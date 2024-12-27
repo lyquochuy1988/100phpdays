@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* C1 */
+        // const maxNumber = Math.max(1, 5, 19);
+        // const maxNumber = Math.max(100, 5, 19);
+        // console.log(`Max: 100, 5, 19: ${maxNumber}`);
+
+        /**
+         * C2
+        */
+        //    const one = 1;
+        //    const two = 5;
+        //    const three = 19;
+        //    let maxTwoNumber = one;
+
+        //    if (one < two) {
+        //         maxTwoNumber = two;
+        //    }
+
+        //    if (maxTwoNumber < three) {
+        //         maxTwoNumber = three;
+        //    }
+
+        //    console.log(`Max: 1, 5, 19: ${maxTwoNumber}`);
+
+        /**
+         * C3
+         */
+        
+        function findMax(arr) {
+            if (arr.length === 0) return null;
+            let max = arr[0];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+
+            return max;
+        }
+
+        const numbers = [1, 5, 19];
+        console.log(findMax(numbers));
+    </script>
+</body>
+</html>
