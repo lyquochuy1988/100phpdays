@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function randomInRange(start, end) {
+            if (start > end) {
+                console.log("So bat dau phai nho hon so ket thuc!");
+                return;
+            }
+
+            if (start === end) {
+                console.log(`So ngau nhien: ${start}`);
+            }
+
+            const randomNumber = Math.floor(Math.random() * (end - start + 1)) + start; // 19 - 14 = 5 + 1 = 6 
+            console.log(`So ngau nhien: ${randomNumber}`);
+        }
+
+        randomInRange(14, 19);
+    </script>
+</body>
+</html>
