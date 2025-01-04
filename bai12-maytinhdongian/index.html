@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May tinh don gian</title>
+</head>
+<body>
+    <script>
+        const numberOne = 3;
+        const numberTwo = 0;
+        const math = "/";
+        let result = 0;
+        let error = "";
+        let canCaculate = true;
+
+        switch (math) {
+            case "+":
+                result = numberOne + numberTwo;
+                break;
+
+            case "-":
+                result = numberOne - numberTwo;
+                break;
+
+            case "x":
+                result = numberOne * numberTwo;
+                break;
+
+            case "/":
+            case ":":
+                if (numberTwo === 0) {
+                    error = "Khong the chia cho 0";
+                    canCaculate = false;
+                } else {
+                    result = numberOne / numberTwo;
+                }
+                
+                break;
+        
+            default:
+                error = "Khong thuc hien duoc, phep tinh khong hop le";
+                canCaculate = false;
+                break;
+        }
+
+        if (canCaculate === true) {
+            console.log(`${numberOne} ${math} ${numberTwo} = ${result}`);
+        } else {
+            console.log(error);
+        }        
+    </script>
+</body>
+</html>
