@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So toan chan</title>
+</head>
+<body>
+    <script>
+        function isAllEven(yourNumber) {
+            // convert number to string
+            const numberString = yourNumber.toString();
+
+            for (let digit of numberString) {
+                if (parseInt(digit) % 2 !== 0) {
+                    return "No";
+                }
+            }
+
+            return "Yes";
+        }
+
+
+        console.log(isAllEven(208));
+        console.log(isAllEven(118));
+    </script>
+</body>
+</html>
