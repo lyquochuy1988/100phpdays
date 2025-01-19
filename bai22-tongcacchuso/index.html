@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumDigits(yourNumber) {
+            // convert number to string
+            let numberStr = yourNumber.toString();
+            let sum = 0;
+            let sumExpression = "";
+
+            for (let i = 0; i < numberStr.length; i++) {
+                sum += parseInt(numberStr[i]);
+                sumExpression += numberStr[i] + (i < numberStr.length - 1 ? " + " : "");
+            }
+
+            console.log(`${sumExpression} = ${sum}`);
+        }
+
+        sumDigits(1);
+        sumDigits(12);
+        sumDigits(123);
+    </script>
+</body>
+</html>
