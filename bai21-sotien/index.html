@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So tien</title>
+</head>
+<body>
+    <script>
+        function isAccendingNumber(yourNumber) {
+            // convert number to string
+            const stringNumber = yourNumber.toString();
+
+            for (let i = 0; i < stringNumber.length - 1; i++) {
+                if (stringNumber[i] >= (stringNumber[i + 1])) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        const yourNumber = 279;
+
+        if (isAccendingNumber(yourNumber)) {
+            console.log("Yes");
+        } else {
+            console.log("No");
+        }
+    </script>
+</body>
+</html>
