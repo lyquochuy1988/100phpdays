@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateSum(n) {
+            if (n <= 1) {
+                console.log("Vui long nhap so lon hon 1");
+                return;
+            }
+
+            let sum = 0;
+            let sequence = "";
+
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+                sequence += i + (i < n ? " + " : "");
+            }
+
+            console.log(`${sequence} = ${sum}`);
+        }
+
+        calculateSum(2);
+        calculateSum(3);
+    </script>
+</body>
+</html>
