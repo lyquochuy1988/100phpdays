@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorialNumber(n) {
+            let result = 0;
+            let currentResult = 1;
+            let terms = [];
+
+            for (let i = 1; i <= n; i++) {
+                currentResult *= i; // 6
+
+                let term = 1;
+                for (let j = 2; j <= i; j++) {
+                    term += `x${j}`;
+                }
+
+                terms.push(term);
+                result += currentResult; // 9
+            }
+
+            console.log(`${terms.join(' + ')} = ${result}`);
+        }
+
+        factorialNumber(4);
+    </script>
+</body>
+</html>
