@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boi so</title>
+</head>
+<body>
+    <script>
+        function printMultiples(number) {
+            if (number <= 0) {
+                console.log("Vui long nhap 1 so nguyen duong lon hon 0");
+                return;
+            }
+
+            let result = [];
+            for (let i = 0; i * number < 100; i++) {
+                result.push(i * number);
+            }
+
+            console.log(`Boi nho hon 100 cua ${number} la: ${result.join(" ")}`);
+        }
+
+        printMultiples(25);
+        // printMultiples(29);
+    </script>
+</body>
+</html>
