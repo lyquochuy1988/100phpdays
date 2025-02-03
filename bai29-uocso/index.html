@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uoc so</title>
+</head>
+<body>
+    <script>
+        function findDivisor(number) {
+            if (number <= 0) {
+                console.log("Hay nhap 1 so nguyen duong");
+                return;
+            }
+
+            let divisors = [];
+            for (let i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    divisors.push(i);
+                }
+            }
+
+            console.log(`Uoc so cua ${number} la: ${divisors.join(' ')}`);
+        }
+
+        findDivisor(1);
+        findDivisor(10);
+        findDivisor(24);
+    </script>
+</body>
+</html>

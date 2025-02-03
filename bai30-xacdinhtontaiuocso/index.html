@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xac dinh ton tai uoc so</title>
+</head>
+<body>
+    <script>
+        function checkDivisor(arrInt, number) {
+            let exists = arrInt.some(num => number % num === 0);
+
+            const result =  exists ? "Ton tai" : "Khong ton tai";
+            console.log(result);
+        }
+
+        checkDivisor([14, 12, 3, 5, 6], 3);
+        checkDivisor([14, 12, 3, 5, 6], 4);
+        checkDivisor([14, 12, 3, 5, 6], 9);
+    </script>
+</body>
+</html>
