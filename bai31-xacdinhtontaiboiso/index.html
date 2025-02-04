@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function boiso(arrInt, number) {
+            let result = arrInt.some(num =>  (num % number === 0 && num % (number + 1) === 0));
+
+            console.log(result ? "Ton tai" : "Khong ton tai");
+        }
+
+        boiso([14, 12, 3, 21, 6], 3);
+        boiso([14, 12, 3, 21, 6], 4);
+        boiso([14, 12, 3, 21, 6], 5);
+    </script>
+</body>
+</html>
