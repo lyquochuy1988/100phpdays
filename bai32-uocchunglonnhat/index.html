@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function timUCLN(x, y) {
+            while (y !== 0) {
+                let temp = y; // temp = 18 , temp = 9
+                y = x % y; // y = 9; y = 0
+                x = temp; // x = 18; x = 9
+            }     
+
+            return x;
+        }
+
+        let x1 = 27, y1 = 18;
+        console.log(`UCLN cua ${x1} va ${y1} la : ${timUCLN(x1, y1)}`);
+
+        let x2 = 15, y2 = 30;
+        console.log(`UCLN cua ${x2} va ${y2} la : ${timUCLN(x2, y2)}`);
+    </script>
+</body>
+</html>
