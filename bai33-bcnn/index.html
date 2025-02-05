@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ucln(a, b) {
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+
+        function bcnn(x, y) {
+            return (x * y) / ucln(x, y);
+        }
+
+        let x = 25; let y = 10;
+        console.log(`BCNN cua ${x} va ${y} la: ${bcnn(x, y)}`);
+    </script>
+</body>
+</html>
