@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function evenDivisors(number) {
+            if (number < 1 || number % 2 !== 0) {
+                console.log(`Vui long nhap so nguyen duong chan lon hon 1`);
+                return;
+            }
+
+            let result = [];
+            for (let i = 2; i <= number; i += 2) {
+                if (number % i === 0) {
+                    result.push(i);
+                }
+            }
+
+            console.log(`Uoc so chan cua ${number} la: ${result.join(" ")}`);
+        }
+
+        evenDivisors(2);
+        evenDivisors(24);
+        evenDivisors(30);
+    </script>
+</body>
+</html>
