@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function uoclelonnhat(number) {
+            let maxOddDivisior = 1;
+
+            for (let i = 1; i < number; i++) {
+                if (number % i === 0) {
+                    maxOddDivisior = i;
+                }
+            }
+
+            console.log(`Uoc le lon nhat cua ${number} la: ${maxOddDivisior}`);
+        }
+
+        uoclelonnhat(3);
+        uoclelonnhat(27);
+        uoclelonnhat(30);
+    </script>
+</body>
+</html>
