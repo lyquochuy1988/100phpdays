@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printPyramid(height) {
+            for (let i = 1; i <= height; i++) {
+                let equals = "=".repeat(height - i);
+                let pluses = "+".repeat(i);
+
+                console.log(equals + pluses);
+            }
+        }
+
+        // printPyramid(5);
+        printPyramid(7);
+    </script>
+</body>
+</html>
