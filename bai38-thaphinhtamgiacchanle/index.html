@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printPyramid(height) {
+            for (let i = 1; i <= height; i++) {
+                let line = i + (i % 2 === 0 ? "=".repeat(i) : "+".repeat(i));
+                console.log(line);
+            }
+        }
+
+        printPyramid(3);
+        printPyramid(4);
+    </script>
+</body>
+</html>
