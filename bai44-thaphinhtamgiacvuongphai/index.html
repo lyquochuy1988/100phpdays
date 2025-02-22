@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printNumberPyramid(height) {
+            for (let i = 1; i <= height; i++) {
+                let space = ' '.repeat(height - i);
+                let number = '';
+                for (let j = i; j >= 1; j--) {
+                    number += j;
+                }
+
+                console.log(space + number);
+            }
+        }
+
+        printNumberPyramid(3);
+    </script>
+</body>
+</html>
