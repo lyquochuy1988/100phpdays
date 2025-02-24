@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printNumberPyramid(height) {
+            for (let i = 1; i <= height; i++) {
+                let spaces = ' '.repeat(height - i); // Tạo khoảng trắng để căn chỉnh
+                let leftNumbers = Array.from({ length: i }, (_, idx) => i - idx).join(''); // Dãy số giảm dần
+                let rightNumbers = Array.from({ length: i - 1 }, (_, idx) => idx + 2).join(''); // Dãy số tăng dần
+                console.log(spaces + leftNumbers + rightNumbers); // In ra dòng tương ứng
+            }
+        }
+
+        // Nhập chiều cao và gọi hàm
+        printNumberPyramid(parseInt(5));
+    </script>
+</body>
+</html>
