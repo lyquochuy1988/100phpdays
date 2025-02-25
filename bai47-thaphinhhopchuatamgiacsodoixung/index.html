@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printNumberPyramid(height) {
+            //  2; 2 <= 5; 3
+            for (let i = 1; i <= height; i++) {
+                let spaces = "#".repeat(height - i); // khoang trang ben trai
+                let numbers1 = "";
+                let numbers2 = "";
+
+                // Tao day so tang dan tu 1 den i  ( 12345 )
+                for (let j = 1; j <= i; j++) {
+                    numbers1 += j;
+                }
+
+
+                // Tao day so giam dan tu i - 1 den 1 ( 4321 )
+                for (let j = i - 1; j >= 1; j--) {
+                    numbers2 += j;
+                }
+
+                console.log(spaces + numbers1 + numbers2 + spaces);
+            }
+        }
+
+        printNumberPyramid(5);
+    </script>
+</body>
+</html>
