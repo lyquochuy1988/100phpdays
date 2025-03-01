@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printNumberPyramid(height) {
+            let result = "";
+            for (let i = 1; i <= height; i++) {
+                for (let j = 0; j < height; j++) {
+                    let num = i + j;
+
+                    if (i > 1 && j > 0 && i !== height && j < height - 1) {
+                        result += " ".repeat(num.toString().length);
+                    } else {
+                        result += num;
+                    }
+                }
+
+                result = result + "\n";                          
+            }
+
+            console.log("Ket qua");
+            console.log(result);      
+        }
+
+        printNumberPyramid(3);
+        printNumberPyramid(4);
+        printNumberPyramid(5);
+    </script>
+</body>
+</html>
