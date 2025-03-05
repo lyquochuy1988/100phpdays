@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printPyramid(height) {
+            if (height % 2 === 0) {
+                console.log("Height phai la so le");
+                return;
+            }
+
+            // Xac dinh dong o giua
+            let mid = Math.floor(height / 2);
+            
+            // Lap qua moi dong
+            for (let i = 0; i < height; i++) {
+                let row = "";
+
+                // Lap qua moi cot
+                for (let j = 0; j < height; j++) {
+                    if (i === 0 || i === height - 1) {
+                        row += "#";
+                    } else if (i === mid && j === mid) { // Neu là dòng giữa và cột giữa
+                        row += "#";
+
+                        // Xác định vị trí bên trái và bên phải và in ra "#"
+                    } else if (i !== 0 && (i !== height - 1) && j === mid - Math.abs(mid - i) || j === mid + Math.abs(mid - i)) { 
+                        row += "#";
+                    } else {
+                        row += " ";
+                    }
+                    
+                }
+
+                console.log(row);
+            }
+
+            
+        }
+
+        printPyramid(5);
+    </script>
+</body>
+</html>
