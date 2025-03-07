@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printPyramid(height) {
+            if (height % 2 === 0) {
+                console.log("Chiều cao phải là số lẻ.");
+                return;
+            }
+
+            let center = Math.floor(height / 2);
+            let shape = "";
+
+            // Dòng đầu tiên
+            let line = "1" + " ".repeat(height - 2) + height + "\n";
+            shape += line;
+
+            // Nửa trên (trừ dòng đầu tiên)
+            let shapeTop = "";
+            for (let i = 2; i <= height / 2; i++) { // i = 2; i <= 7/2; i++
+                let record = " ".repeat(i - 1) + i + " ".repeat(height - 2 * i) + (height - i + 1);
+                shapeTop += record + "\n";
+            }
+
+            // Dòng trung tâm
+            let centerCharacter = " ".repeat(center) + (center + 1) + "\n";
+
+            // Nửa dưới (trừ dòng cuối)
+            let shapeBottom = "";
+            for (let i = 2 + center; i < height; i++) {
+                let record = " ".repeat(height - i) + (height - i + 1) + " ".repeat(2 * i - height - 2) + i;
+                shapeBottom += record + "\n";
+            }
+
+            // Dòng cuối cùng giống dòng đầu tiên
+            shape += shapeTop + centerCharacter + shapeBottom + line;
+
+            console.log(shape);
+        }
+
+        printPyramid(5);
+        console.log("------------");
+        printPyramid(7);
+
+
+    </script>
+</body>
+</html>
