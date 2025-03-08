@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function printChristmasTree(height) {
+        let shape = "";
+
+        // Vẽ phần thân cây thông
+        for (let i = 1; i <= height; i++) {
+            let character = (i % 2 === 0) ? "#" : "o";
+            let around = " ".repeat(height - i);
+            let center = (i + character).repeat(i).slice(0, -1); // Xóa ký tự cuối
+            shape += around + center + around + "\n";
+        }
+
+        // Vẽ phần thân cây (hai dòng gạch đứng)
+        for (let i = 1; i <= Math.floor(height / 2); i++) {
+            let space1 = " ".repeat((height + 1) / 2);
+            let space2 = " ".repeat(height - 4);
+            shape += space1 + "|" + space2 + "|" + "\n";
+        }
+
+        // Vẽ đế cây
+        shape += "-".repeat(2 * height - 1);
+
+        console.log(shape);
+    }
+
+    // Chạy chương trình với height = 9
+    printChristmasTree(5);
+
+
+    </script>
+</body>
+</html>
