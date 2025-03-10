@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isSimTuQuy(phone) {
+            // Loại bỏ dấu chấm (nếu có)
+            phone = phone.replace(/\./g, "");
+
+            // Kiểm tra từng dãy 4 số liên tiếp
+            for (let i = 0; i <= phone.length - 4; i++) {
+                if (phone[i] === phone[i + 1] &&
+                    phone[i] === phone[i + 2] &&
+                    phone[i] === phone[i + 3]) {
+                    return "Yes";
+                }
+            }
+            return "No";
+        }
+
+        // Test
+        const testCases = ["0765743333", "0764758888", "0383.308.983", "0764.555.578"];
+        testCases.forEach(phone => {
+            console.log(`Phone: ${phone} => ${isSimTuQuy(phone)}`);
+        });
+
+    </script>
+</body>
+</html>
