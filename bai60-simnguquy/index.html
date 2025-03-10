@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        function isSimTuQuy(phone) {
+        function isSimNguQuy(phone) {
             // Loại bỏ dấu chấm (nếu có)
             phone = phone.replace(/\./g, "");
 
@@ -15,7 +15,8 @@
             for (let i = 0; i < phone.length - 4; i++) {
                 if (phone[i] === phone[i + 1] &&
                     phone[i] === phone[i + 2] &&
-                    phone[i] === phone[i + 3]) {
+                    phone[i] === phone[i + 3] && 
+                    phone[i] === phone[i + 4]) {
                     return "Yes";
                 }
             }
@@ -23,11 +24,10 @@
         }
 
         // Test
-        const testCases = ["0765743333", "0764758888", "0383.308.983", "0764.555.578"];
+        const testCases = ["0765733333", "0764788888", "0383.308.983", "08.33333.494"];
         testCases.forEach(phone => {
-            console.log(`Phone: ${phone} => ${isSimTuQuy(phone)}`);
+            console.log(`Phone: ${phone} => ${isSimNguQuy(phone)}`);
         });
-
     </script>
 </body>
 </html>
