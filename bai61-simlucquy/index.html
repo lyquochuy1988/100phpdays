@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript: Kiểm tra sim lục quý theo cách số chia hết cho 111111
+        const isLuckySim = phone => {
+            phone = phone.replace(/\D/g, ""); // Loại bỏ ký tự không phải số
+            const lastSix = phone.slice(-6); // Lấy 6 số cuối
+            return parseInt(lastSix, 10) % 111111 === 0 ? "Yes" : "No";
+        };
+
+        console.log(isLuckySim("0818999999")); // Yes
+        console.log(isLuckySim("0383389893")); // No
+        console.log(isLuckySim("076.7777775")); // Yes
+    </script>
+</body>
+</html>
