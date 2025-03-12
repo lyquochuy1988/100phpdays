@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function simthantai(phone) {
+            let result = "No";
+
+            phone = phone.replace(".", "");
+            let lastTwoDigits = parseInt(phone.substr(-2));
+            
+
+            if (lastTwoDigits === 39 || lastTwoDigits === 79) {
+                result = "Yes";
+            }
+
+            console.log(result);
+            return result;
+        }
+
+        simthantai("0324456.779");
+        simthantai("0324456.739");
+        simthantai("0324456.728");
+    </script>
+</body>
+</html>
