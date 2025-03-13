@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function simtienlendon(phone) {
+            let result = "No";
+
+            phone = phone.replace(".", "");
+            phone = phone.substr(-3);
+            
+            if (parseInt(phone[0]) === parseInt(phone[1]) - 1 && parseInt(phone[0]) === parseInt(phone[2])-2) {
+                result = "Yes";
+            }
+
+            console.log(result);
+            return result;
+        }
+
+        simtienlendon("0589244567"); // Yes 
+        simtienlendon("0589244983"); // No
+        simtienlendon("0589.244.678"); // Yes
+    </script>
+</body>
+</html>
