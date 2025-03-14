@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tinhTongChanLe(arrInt) {
+            let sumEven = 0;
+            let sumOdd = 0;
+            let sumAll = 0;
+
+            for (let index in arrInt) {
+                if (arrInt[index] % 2 === 0) {
+                    sumEven += arrInt[index];
+                } else {
+                    sumOdd += arrInt[index];
+                }
+            }
+
+            sumAll = sumEven + sumOdd;
+
+            console.log(`sumEven = ${sumEven}`);
+            console.log(`sumOdd = ${sumOdd}`);
+            console.log(`sumAll = ${sumAll}`);
+        }
+
+        tinhTongChanLe([4, 2, 3, 6]);
+        tinhTongChanLe([3, 8, 3]);
+    </script>
+</body>
+</html>
