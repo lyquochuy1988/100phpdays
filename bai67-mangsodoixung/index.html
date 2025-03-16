@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isSymmetricArray(arr) {
+            let length = arr.length;
+            for (let i = 0; i < Math.floor(length / 2); i++) {
+                if (arr[i] !== arr[length - i - 1]) {
+                    return "Không đối xứng";
+                }
+            }
+
+            return "Đối xứng";
+        }
+
+        // Test
+        console.log(isSymmetricArray([0, 1, 2, 12, 0])); // Không đối xứng
+        console.log(isSymmetricArray([0, 1, 2, 1, 0])); // Đối xứng
+        console.log(isSymmetricArray([1, 2, 7])); // Không đối xứng
+        console.log(isSymmetricArray([2])); // Đối xứng
+
+    </script>
+</body>
+</html>
