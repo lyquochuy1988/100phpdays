@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function averageEvenAtOddIndices(arrInt) {
+            let sum = 0;
+            let count = 0;
+            let result = [];
+
+            for (let i = 0; i < arrInt.length; i += 2) {
+                if (arrInt[i] % 2 === 0) {
+                    result.push(arrInt[i]);
+                    sum += arrInt[i];
+                    count++;
+                }
+            }
+
+            if (count === 0) {
+                console.log("Avg: 0");
+            } else {
+                let avg = sum / count;
+                console.log(`Avg: (${result.join(" + ")}) / ${count} = ${avg.toFixed(1)}`);
+            }
+        }
+
+        // Test
+        averageEvenAtOddIndices([2, 4, 6, 2]); // 4.0
+        averageEvenAtOddIndices([1, 2, 3]); // 0
+        averageEvenAtOddIndices([2, 4, 6, 2, 8]); // 5.3
+
+    </script>
+</body>
+</html>
