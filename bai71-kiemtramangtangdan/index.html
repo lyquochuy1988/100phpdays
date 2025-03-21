@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isAscendingArray(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] >= arr[i + 1]) {
+                    return "Không tăng dần";
+                }
+            }
+            return "Tăng dần";
+        }
+
+        // Kiểm tra với một số mảng
+        console.log(isAscendingArray([-1, -2]));  // Không tăng dần
+        console.log(isAscendingArray([-2, -1]));  // Tăng dần
+        console.log(isAscendingArray([3, 1, 2, 44]));  // Không tăng dần
+        console.log(isAscendingArray([0, 1, 1, 4]));  // Không tăng dần
+        console.log(isAscendingArray([-3, -1, 5, 34]));  // Tăng dần
+        console.log(isAscendingArray([-3, -1, 0, 0]));  // Không tăng dần
+        console.log(isAscendingArray([0, 0, 0, 0]));  // Không tăng dần
+
+    </script>
+</body>
+</html>
