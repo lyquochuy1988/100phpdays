@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gtln(arrInt) {
+            let absVal = arrInt.map(Math.abs);
+            let maxVal = Math.max(...absVal);
+            
+            let updateArr = arrInt.map(() => maxVal);
+            console.log(updateArr);
+           
+        }
+
+        gtln([2, -224, -16, 2]);
+    </script>
+</body>
+</html>
