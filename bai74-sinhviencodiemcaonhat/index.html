@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const scores = [2, 9, 8, 4, 10];
+        const students = ["Hân", "Dũng", "Linh", "Cường", "Lan"];
+
+        let maxIndex = 0;
+
+        for (let i = 1; i < scores.length; i++) {
+            if (scores[i] > scores[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+
+        console.log(`HV có điểm cao nhất - ${students[maxIndex]}: ${scores[maxIndex]}`);
+
+    </script>
+</body>
+</html>
