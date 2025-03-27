@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function findWordPosition(sentence, searchWord) {
+            let words = sentence.split(" ");
+            let searchWordLength = searchWord.length;
+
+            let result = 0;
+            
+            for (let i = 0; i < words.length; i++) {
+                
+                if (words[i].substring(0, searchWordLength) === searchWord) {
+                    result = i + 1;
+                    break;
+                } else {
+                    result = -1;
+                }
+            }
+
+
+            return result;
+        }
+
+        // Test        
+        console.log(findWordPosition("lap trinh php tai zendvn la chuong trinh", "tri")); // 2
+        console.log(findWordPosition("hoc lap trinh php tai zendvn", "tri")); // 3
+        console.log(findWordPosition("hoc lap trinh php tai zendvn", "abc")); // -1
+
+    </script>
+</body>
+</html>
