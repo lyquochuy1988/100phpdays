@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function trungbinhcong(arr) {
+            let minValue = Math.min(...arr);
+            let maxValue = Math.max(...arr);
+
+            let total = arr.reduce((sum, num) => sum + num, 0);
+            let avgValue = (total - minValue - maxValue) / (arr.length - 2);
+            console.log(avgValue.toFixed(1));
+        }
+
+        trungbinhcong([4, 3, 1, 2]); // 2.5
+        trungbinhcong([9, 3, 4, 2]); // 2.5
+        trungbinhcong([3, 1, 7]); // 3.0
+    </script>
+</body>
+</html>
