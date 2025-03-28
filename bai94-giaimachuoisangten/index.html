@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function decodeString(str, key) {
+            let result = "";
+            let startIndex = 0;
+            let endIndex = 0;
+
+            for (let i = 0; i < key.length; i++) {
+                let keyNumber = parseInt(key[i]);
+
+                endIndex += keyNumber;                
+
+                let words = str.substring(startIndex, endIndex);
+                
+                result += words.charAt(0).toUpperCase() + words.slice(1) + " ";
+                startIndex = endIndex;                
+            }
+
+            console.log(result.trim());
+        }
+
+        // Test case
+        let str = "hoclaptrinh";
+        let key = "335";
+
+        console.log(decodeString(str, key)); // Output: "Hoc Lap Trinh"
+
+    </script>
+</body>
+</html>
