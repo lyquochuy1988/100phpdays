@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumDigits(num) {
+            while (num >= 10) {  // Lặp lại đến khi num chỉ còn 1 chữ số
+                let sum = 0;     // Biến sum để tính tổng các chữ số
+
+                while (num > 0) {  // Lấy từng chữ số của num để cộng lại
+                    sum += num % 10;  // Lấy chữ số cuối cùng của num và cộng vào sum
+                    num = Math.floor(num / 10);  // Loại bỏ chữ số cuối cùng
+                }
+
+                num = sum;  // Cập nhật num thành tổng vừa tính được để tiếp tục vòng lặp
+            }
+            return num;  // Trả về kết quả cuối cùng khi num chỉ còn 1 chữ số
+        }
+
+        // Test cases
+        console.log(sumDigits(99992)); // Output: 2
+        console.log(sumDigits(39));    // Output: 3
+        console.log(sumDigits(92));    // Output: 2
+
+    </script>
+</body>
+</html>
