@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getHighestScores(input) {
+            let result = "";
+
+            let inputArr = input.split("#");
+            
+            inputArr.forEach(value => {
+                let info = value.split(/[\,,\/]/);
+                let name = info[0];
+                let scores = info.slice(1);
+                let newScoresNumer = scores.map((num) => parseInt(num));
+                let maxScores = Math.max(...newScoresNumer);
+
+                result += `${info[0]} : ${maxScores}\n`;
+            });
+
+            return result;
+        }
+
+        // Test với input
+        let input = "Hue/2,3,4#Linh/5,3#Duy/5,36";
+        console.log(getHighestScores(input));
+
+    </script>
+</body>
+</html>
