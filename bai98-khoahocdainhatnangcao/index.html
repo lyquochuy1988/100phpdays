@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLongestCourse(inputName, inputTime) {
+            // Chuyển đổi chuỗi inputName thành object
+            // "abw=nodejs;def=javascript;nfv=reactjs;"
+            // => {"abw": "nodejs", "def": "javascript", ...}
+            let inputNameArr = inputName.split(";").filter(Boolean);
+            let inputNameObj = {};
+
+            for (let x in inputNameArr) {
+                let [key, value] = inputNameArr[x].split("=");
+                inputNameObj[key] = value;
+            }
+
+
+            // // Chuyển đổi chuỗi inputTime thành object
+            let inputTimeArr = inputTime.split(";").filter(Boolean);
+            let inputTimeObj = {};
+
+            for (let x in inputTimeArr) {
+                let [key, value] = inputTimeArr[x].split("=");
+                inputTimeObj[key] = value;
+            }            
+
+            // // Tìm khóa học có thời gian dài nhất
+            let maxId = null;
+            let maxTime = -1;
+            for (let x in inputTimeObj) {
+                if (inputTimeObj[x] > maxTime) {
+                    maxTime = inputTimeObj[x];
+                    maxId = x;
+                }
+            }
+
+            // // Xuất kết quả
+            if (maxId !== null) {
+                console.log(`Course Id: ${maxId} - Course Name: ${inputNameObj[maxId]} - Course Time: ${maxTime}}`);
+            }
+        }
+
+        // Test với dữ liệu mẫu
+        findLongestCourse(
+            "abw=java;def=android;nfv=php;",
+            "abw=9920;nfv=240;def=1990"
+        );
+
+        findLongestCourse(
+            "abw=java;def=android;nfv=php;",
+            "abw=20;nfv=40;def=90"
+        );
+
+        findLongestCourse(
+            "abw=nodejs;def=javascript;nfv=reactjs;",
+            "abw=120;nfv=410;def=590"
+        );
+
+    </script>
+</body>
+</html>
