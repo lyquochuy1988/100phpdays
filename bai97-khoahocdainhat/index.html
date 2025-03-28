@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLongestCourse(str) {
+            let courses = str.split("/");
+            let result = "";
+            let maxTime = 0;
+
+            for (let i = 1; i < courses.length; i += 2) {
+                if (parseInt(courses[i]) > maxTime) {
+                    maxTime = parseInt(courses[i]);
+                }
+            }
+
+            for (let i = 1; i < courses.length; i += 2) {
+                if (parseInt(courses[i]) === maxTime) {
+                    result += `${courses[i-1]} : ${maxTime}\n`;
+                }
+            }
+
+            return result.trim();
+        }
+
+        // Test
+        let str1 = "php/12/frontend/30/javascript/15/python/140";
+        console.log(findLongestCourse(str1));
+
+        let str2 = "php/12/java/140/python/140";
+        console.log(findLongestCourse(str2));
+
+        let str3 = "php/12/java/14";
+        console.log(findLongestCourse(str3));
+
+    </script>
+</body>
+</html>
