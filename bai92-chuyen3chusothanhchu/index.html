@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function convertNumberToWords(number) {
+            if (number < 100 || number >= 1000) {
+                return "Dữ liệu không hợp lệ";
+            }
+
+            let dictionary = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+
+            let hundred = Math.floor(number / 100);
+            let ten = Math.floor((number % 100) / 10);
+            let unit = number % 10;
+
+            let result = dictionary[hundred] + " trăm";
+
+            if (ten === 0 && unit !== 0) {
+                result += " linh";
+            } else if (ten === 1) {
+                result += " mười";
+            } else if (ten > 1) {
+                result += " " + dictionary[ten] + " mươi";
+            }
+
+            if (unit !== 0) {
+                if (ten > 1 && unit === 1) {
+                    result += " mốt";
+                } else if (ten > 0 && unit === 5) {
+                    result += " lăm";
+                } else {
+                    result += " " + dictionary[unit];
+                }
+            }
+
+            return result;
+        }
+
+        // Test
+        let numbers = [100, 109, 111, 120, 135, 205, 417, 570, 999];
+
+        numbers.forEach(num => {
+            console.log(num + " => " + convertNumberToWords(num));
+        });
+
+    </script>
+</body>
+</html>
