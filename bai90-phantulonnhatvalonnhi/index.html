@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMaxTwo(arr) {
+            if (arr.length < 2) {
+                console.log("Mang co it hon 2 phan tu");
+                return;
+            }
+
+            let maxOne = arr[0];
+            let maxTwo = arr[1];
+
+            if (maxTwo > maxOne) {
+                [maxOne, maxTwo] = [maxTwo, maxOne];
+            }
+
+            for (let i = 2; i < arr.length; i++) {
+                if (arr[i] > maxOne) {
+                    maxTwo = maxOne;                    
+                    maxOne = arr[i];
+                } else if (arr[i] > maxTwo) {
+                    maxTwo = arr[i];
+                }
+            }
+
+            console.log(`Max 1: ${maxOne} - Max 2: ${maxTwo}`);
+        }
+
+        // Test
+        findMaxTwo([1, 2, 3, 4, 4]); // Max 1: 4 - Max 2: 4
+        findMaxTwo([1, 2, 6, 4, 9]); // Max 1: 9 - Max 2: 6
+        findMaxTwo([2, 3, 4]);       // Max 1: 4 - Max 2: 3
+
+    </script>
+</body>
+</html>
