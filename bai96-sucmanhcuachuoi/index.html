@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maxPower(str) {
+            let result = 0;
+            let powerCharacter = str[0]; // luu ky tu
+            let powerTime = 1; // so lan xuat hien ky tu lien tiep
+
+            for (let i = 0; i < str.length - 1; i++) {
+                if (powerCharacter === str[i+1]) {
+                    powerTime++;
+                } else {
+                    powerCharacter = str[i+1];
+                    result = Math.max(powerTime, result);
+                    powerTime = 1;
+                }
+            }
+
+            return Math.max(powerTime, result);
+        }
+
+        // Test case
+        console.log(maxPower("abcccddddeeeeedcba")); // Output: 5
+        console.log(maxPower("cddddeeffffdcbba"));    // Output: 4
+
+    </script>
+</body>
+</html>
