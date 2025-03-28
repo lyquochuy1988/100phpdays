@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function categorizeCourses(inputCategory, inputCourse) {
+            // Bước 1: Tách danh mục thành Object { categoryID: categoryName }
+            let arrInputCategory = inputCategory.split("$");
+            let categoryMap = {};
+            arrInputCategory.forEach(item => {
+                let [categoryID, categoryName] = item.split("|");
+                categoryMap[categoryID] = categoryName;
+            });
+
+            /**categoryMap là 1 obj
+             * {D1: 'Lập trình web', D2: 'Lập trình phần mềm', D3: 'Lập trình di động'}             * 
+            */
+
+            // Bước 2: Tách danh sách khóa học thành mảng [{courseName, categoryID}]
+            let arrInputCourse = inputCourse.split("|");
+            let courseList = [];
+            arrInputCourse.forEach(course => {
+                let parts = course.split("=");
+                if (parts.length === 2) {
+                    let courseName = parts[0];
+                    let categoryID = parts[1];
+                    courseList.push({ courseName, categoryID });
+                }
+            });
+
+            /**courseList là 1 array bên trong chứa các obj
+             *  
+             *  [
+             *      {courseName: 'HTML', categoryID: 'D1'},
+                    {courseName: 'PHP', categoryID: 'D1'},
+                    ...
+                ]
+            */ 
+
+            // Bước 3: Gom nhóm khóa học theo danh mục
+            let result = "";
+            let index = 1;
+
+            // Object.keys(categoryMap) // ['D1', 'D2', 'D3']
+
+            Object.keys(categoryMap).forEach(categoryID => {
+                let categoryName = categoryMap[categoryID];
+                let filteredCourses = courseList.filter(course => course.categoryID === categoryID);
+                /* [{…}, {…}, {…}]
+                   0: {courseName: 'HTML', categoryID: 'D1'},
+                   1: {courseName: 'PHP', categoryID: 'D1'}
+                   ...
+                */
+
+                let count = filteredCourses.length;
+                let courseNames = filteredCourses.map(course => course.courseName).join(", ");
+
+                // // Bước 4: Xuất kết quả
+                if (count > 0) {
+                    result += `${index}. ${categoryName} (${count} khóa học): ${courseNames}\n`;
+                    index++;
+                }
+            });
+
+            return result;
+        }
+
+        // Test case
+        let inputCategory = "D1|Lập trình web$D2|Lập trình phần mềm$D3|Lập trình di động";
+        let inputCourse = "HTML=D1|PHP=D1|Laravel=D1|Winform=D2|NodeJS=D2|React Native=D3";
+
+        console.log(categorizeCourses(inputCategory, inputCourse));
+    </script>
+</body>
+</html>
