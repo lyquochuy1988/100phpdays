@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function decodeMessage(input) {
+        let characterOnly = input.replace(/[^A-Za-z]/g, "");
+        let numerOnly = input.replace(/[^0-9]/g, "");
+        
+        let result = [];
+
+        let startIndex = 0;
+
+        for (let i = 0; i< numerOnly.length; i++) {
+            let endIndex = startIndex + parseInt(numerOnly[i]);
+
+            let words = characterOnly.substring(startIndex, endIndex);
+            words = words.charAt(0).toUpperCase() + words.substring(1);
+
+            result.push(words);
+
+            startIndex = endIndex;
+
+        }
+
+        console.log(result.join(" "));
+    }
+
+    // Test case
+    let input = "2c+)1o!@(*&!y@&chi&^c!@#o3co$23%^#nd$#$!uo5ng";
+    let input2 = "!@x$3i*nc4*(hao";
+    console.log(decodeMessage(input)); // Output: "Co Y Chi Co Con Duong"
+    console.log(decodeMessage(input2)); // Output: "Xin Chao"
+
+    </script>
+</body>
+</html>
